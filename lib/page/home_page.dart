@@ -25,32 +25,33 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  gradient:
-                      LinearGradient(colors: [Colors.orange, Colors.yellow])),
-              width: 300,
-              child: TextField(
-                controller: searchtearm,
-                decoration: InputDecoration(hintText: 'datr'),
-                onEditingComplete: searchg,
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Colors.orange, Colors.yellow])),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 300,
+                child: TextField(
+                  controller: searchtearm,
+                  decoration: InputDecoration(hintText: 'datr'),
+                  onEditingComplete: searchg,
+                ),
               ),
-            ),
-            Container(
-              child: ElevatedButton(
-                  onPressed: () {
-                    searchg();
-                  },
-                  child: Text('data')),
-            )
-          ],
-        ),
-      ],
+              Container(
+                child: ElevatedButton(
+                    onPressed: () {
+                      searchg();
+                    },
+                    child: Text('data')),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
