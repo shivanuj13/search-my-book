@@ -14,9 +14,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController searchtearm = TextEditingController();
-  void searchg()
+  void searchg() async
   {
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchReasult()) );
+    BookList books;
+    books = await fetchbook(searchtearm.text);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchReasult(books: books,)) );
   }
   @override
   Widget build(BuildContext context) {
