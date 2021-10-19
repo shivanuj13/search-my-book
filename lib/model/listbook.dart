@@ -65,7 +65,7 @@ class VolumeInfo {
       authors: List<String>.from(map['authors']),
       publisher: map['publisher'],
       publishedDate: map['publishedDate'],
-      discription: map['discription'],
+      discription: map['description'],
       industryIdentifiers: [],
       imageLink: ImageLink.fromMap(map['imageLinks']
         // "smallThumbnail": "http://books.google.com/books/content?id=C9GQMwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
