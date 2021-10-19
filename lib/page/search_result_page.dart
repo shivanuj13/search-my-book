@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:search_my_book/model/listbook.dart';
 import 'package:search_my_book/page/book_page.dart';
@@ -20,6 +21,9 @@ class _SearchReasultState extends State<SearchReasult> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.searchtearm!),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Color(0x00FFFFFF)
+      ),
       backgroundColor: Color(0xD1DBACD1),
       foregroundColor: Color(0xE7000000),
       ),
@@ -93,7 +97,7 @@ class _BookTileState extends State<BookTile> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(20),
-                child: Image.network(widget.smallthumb!,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width ,fit: BoxFit.fill,),
+                child:  Image.network(widget.smallthumb!,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width ,fit: BoxFit.fill,),
               ),
               Container(
                  decoration: BoxDecoration(

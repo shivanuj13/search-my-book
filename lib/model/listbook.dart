@@ -40,7 +40,7 @@ class VolumeInfo {
   String? publisher;
   String? publishedDate;
   String? discription;
-  List<IndustryIdentifiers>? industryIdentifiers;
+  // List<IndustryIdentifiers>? industryIdentifiers;
   ImageLink? imageLink;
   VolumeInfo({
     this.title,
@@ -49,7 +49,7 @@ class VolumeInfo {
     this.publisher,
     this.publishedDate,
     this.discription,
-    this.industryIdentifiers,
+    // this.industryIdentifiers,
     this.imageLink,
   });
 
@@ -60,14 +60,17 @@ class VolumeInfo {
     //   ind.add(m);
     // }
     return VolumeInfo(
-      title: map['title'],
-      subtitle: map['subtitle'],
-      authors: List<String>.from(map['authors']),
-      publisher: map['publisher'],
-      publishedDate: map['publishedDate'],
-      discription: map['description'],
-      industryIdentifiers: [],
-      imageLink: ImageLink.fromMap(map['imageLinks']
+      title: map['title']??'no title',
+      subtitle: map['subtitle']??'no subtitle',
+      authors: List<String>.from(map['authors']??['no authors']),
+      publisher: map['publisher']??'no publisher data',
+      publishedDate: map['publishedDate']??'no data',
+      discription: map['description']??'no description',
+      // industryIdentifiers: [],
+      imageLink: ImageLink.fromMap(map['imageLinks']??{
+        "smallThumbnail": "https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg",
+        "thumbnail": "https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg"}
+      
         // "smallThumbnail": "http://books.google.com/books/content?id=C9GQMwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
         //   "thumbnail": "http://books.google.com/books/content?id=C9GQMwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
       ),
