@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:search_my_book/model/listbook.dart';
 import 'package:search_my_book/page/book_page.dart';
 import 'package:search_my_book/service/fetchbook.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SearchReasult extends StatefulWidget {
   SearchReasult({Key? key,this.books,this.searchtearm}) : super(key: key);
@@ -72,7 +73,23 @@ class _BookTileState extends State<BookTile> {
   void bookg() async
   {
     Book bookdetails;
+    showDialog(context: context, builder: (BuildContext context){
+      return AlertDialog(
+        elevation: 0,
+        insetPadding: EdgeInsets.all(10),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(32.0))),
+            backgroundColor: Color(0x00000000),
+        content: Container(
+        height: 200,
+        child: SpinKitChasingDots(
+           color: Color(0xE7DFC8DF),
+           size: 50.0,),
+         ),
+         ) ;
+           });
     bookdetails = await fetchbook(widget.selfLink!);
+    Navigator.pop(context);
     Navigator.push(context, MaterialPageRoute(builder: (context)=> BookDetails(mybook: bookdetails,) ));
   }
   @override

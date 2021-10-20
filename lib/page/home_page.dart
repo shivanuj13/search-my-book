@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:search_my_book/model/listbook.dart';
 import 'package:search_my_book/page/search_result_page.dart';
 import 'package:search_my_book/service/fetchbook.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
 
@@ -20,7 +21,23 @@ class _HomePageState extends State<HomePage> {
   void searchg() async
   {
     BookList books;
+    showDialog(context: context, builder: (BuildContext context){
+      return AlertDialog(
+        elevation: 0,
+        insetPadding: EdgeInsets.all(10),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(32.0))),
+            backgroundColor: Color(0x00000000),
+        content: Container(
+        height: 200,
+        child: SpinKitChasingDots(
+           color: Color(0xE7DFC8DF),
+           size: 50.0,),
+         ),
+         ) ;
+           });
     books = await fetchbooklist(searchtearm.text);
+    Navigator.pop(context);
     Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchReasult(books: books,searchtearm: searchtearm.text,)) );
   }
   @override

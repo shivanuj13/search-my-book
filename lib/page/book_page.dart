@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:search_my_book/model/listbook.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class BookDetails extends StatefulWidget {
   BookDetails({Key? key,this.mybook}) : super(key: key);
@@ -42,7 +44,7 @@ class _BookDetailsState extends State<BookDetails> {
                    color: Color(0x00FFFFFF),
                  ),
                  Container(
-                  //  height: 1000,
+                  //  height: double.minPositive,
                    decoration: BoxDecoration(
                      color: Color(0xAEDFC8DF),
                      borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))
@@ -53,12 +55,18 @@ class _BookDetailsState extends State<BookDetails> {
                        mainAxisAlignment: MainAxisAlignment.start,
                        crossAxisAlignment: CrossAxisAlignment.stretch,
                        children: [
-                         Text(widget.mybook!.volumeInfo!.title!),
-                        //  Text(widget.mybook!.volumeInfo!.subtitle!),
+                         Text('Title :',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                         Text(widget.mybook!.volumeInfo!.title!, style: TextStyle(fontSize: 18),),
+                         Text('Subtitle :',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                         Text(widget.mybook!.volumeInfo!.subtitle!, style: TextStyle(fontSize: 18)),
+                         Text('Authors :',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                          for (var item in widget.mybook!.volumeInfo!.authors!)
-                           Text(item)
+                           Text(item, style: TextStyle(fontSize: 18))
                          ,
-                         Text(widget.mybook!.volumeInfo!.discription!)
+                        Text('Description :',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                        Html(data: widget.mybook!.volumeInfo!.discription!,style: {
+                          "body" : Style(fontSize: FontSize(18))
+                        },)
                        ],
                      )
                    ),

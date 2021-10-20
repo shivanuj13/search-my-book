@@ -60,12 +60,12 @@ class VolumeInfo {
     //   ind.add(m);
     // }
     return VolumeInfo(
-      title: map['title']??'no title',
-      subtitle: map['subtitle']??'no subtitle',
-      authors: List<String>.from(map['authors']??['no authors']),
-      publisher: map['publisher']??'no publisher data',
-      publishedDate: map['publishedDate']??'no data',
-      discription: map['description']??'no description',
+      title: map['title']??'No Data Found',
+      subtitle: map['subtitle']??'No Data Found',
+      authors: List<String>.from(map['authors']??['No Data Found']),
+      publisher: map['publisher']??'No Data Found',
+      publishedDate: map['publishedDate']??'No Data Found',
+      discription: map['description']??'No Data Found',
       // industryIdentifiers: [],
       imageLink: ImageLink.fromMap(map['imageLinks']??{
         "smallThumbnail": "https://www.ncenet.com/wp-content/uploads/2020/04/No-image-found.jpg",
