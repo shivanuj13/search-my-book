@@ -17,7 +17,7 @@ class SearchReasult extends StatefulWidget {
 }
 
 class _SearchReasultState extends State<SearchReasult> {
-  String? _searchtearm;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
