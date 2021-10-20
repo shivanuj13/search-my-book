@@ -7,8 +7,6 @@ import 'package:search_my_book/page/search_result_page.dart';
 import 'package:search_my_book/service/fetchbook.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
-
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -18,8 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController searchtearm = TextEditingController();
-  void searchg() async
-  {
+  void searchg() async {
     BookList books;
     showDialog(context: context, builder: (BuildContext context){
       return AlertDialog(
@@ -40,6 +37,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.pop(context);
     Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchReasult(books: books,searchtearm: searchtearm.text,)) );
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
