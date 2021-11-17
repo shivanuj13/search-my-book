@@ -12,9 +12,10 @@ This is a basic app in which user can make a query and get a list of books in re
 - restful api
 
 ## screenshots
-<img src="screenshot/smb-1.jpg" alt="drawing" width="150"/>
-<img src="screenshot/smb-2.jpg" alt="drawing" width="150"/>
-<img src="screenshot/smb-3.jpg" alt="drawing" width="150"/>
-
+<p float="left">
+<img src="screenshot/smb-1.jpg" alt="drawing" width="30%"/>
+<img src="screenshot/smb-2.jpg" alt="drawing" width="30%"/>
+<img src="screenshot/smb-3.jpg" alt="drawing" width="30%"/>
+</p>
 
 *any contribution will be appreciated.*
